@@ -33,11 +33,7 @@ function loadQuestion() {
         options[index].checked = false; // Reset radio button selection
     });
 
-    // Show radio buttons
-    options.forEach(option => {
-        option.style.display = 'inline-block';
-    });
-
+   
     // Clear any previous messages
     document.getElementById('message').textContent = '';
 }
