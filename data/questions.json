@@ -1,46 +1,147 @@
 {
-    "html": [
-      {
-        "question": "What does HTML stand for?",
-        "options": ["Hyper Text Markup Language", "Hyperlinks and Text Markup Language", "Home Tool Markup Language", "None of the above"],
-        "correct": 0
-      },
-      {
-        "question": "Which HTML element is used to define the title of a document?",
-        "options": ["<meta>", "<title>", "<header>", "<link>"],
-        "correct": 1
-      },
-      {
-        "question": "What is the correct HTML element for inserting a line break?",
-        "options": ["<break>", "<br>", "<lb>", "<hr>"],
-        "correct": 1
-      },
-      {
-        "question": "Which HTML tag is used to create an unordered list?",
-        "options": ["<ul>", "<ol>", "<li>", "<list>"],
-        "correct": 0
-      },
-      {
-        "question": "Which attribute is used to provide a unique identifier for an HTML element?",
-        "options": ["class", "id", "type", "name"],
-        "correct": 1
-      },
-      {
-        "question": "What does the <a> tag in HTML represent?",
-        "options": ["An image", "A hyperlink", "A paragraph", "A header"],
-        "correct": 1
-      },
-      {
-        "question": "Which HTML element is used to define an image?",
-        "options": ["<img>", "<image>", "<pic>", "<src>"],
-        "correct": 0
-      }
-    ],
-    "css": [
-      {
-        "question": "Which CSS property is used to change the text color?",
-        "options": ["color", "font-color", "text-color", "background-color"],
-        "correct": 0
-      }
-    ]
-  }
+  "html": [
+    {
+      "question": "What does HTML stand for?",
+      "options": ["Hyper Text Markup Language", "Hyperlinks and Text Markup Language", "Home Tool Markup Language", "None of the above"],
+      "correct": 0
+    },
+    {
+      "question": "Which HTML element is used to define the title of a document?",
+      "options": ["<meta>", "<title>", "<header>", "<link>"],
+      "correct": 1
+    },
+    {
+      "question": "What is the correct HTML element for inserting a line break?",
+      "options": ["<break>", "<br>", "<lb>", "<hr>"],
+      "correct": 1
+    },
+    {
+      "question": "Which HTML tag is used to create an unordered list?",
+      "options": ["<ul>", "<ol>", "<li>", "<list>"],
+      "correct": 0
+    },
+    {
+      "question": "Which attribute is used to provide a unique identifier for an HTML element?",
+      "options": ["class", "id", "type", "name"],
+      "correct": 1
+    },
+    {
+      "question": "What does the <a> tag in HTML represent?",
+      "options": ["An image", "A hyperlink", "A paragraph", "A header"],
+      "correct": 1
+    },
+    {
+      "question": "Which HTML element is used to define an image?",
+      "options": ["<img>", "<image>", "<pic>", "<src>"],
+      "correct": 0
+    }
+  ],
+  "css": [
+    {
+      "question": "Which CSS property is used to change the text color?",
+      "options": ["color", "font-color", "text-color", "background-color"],
+      "correct": 0
+    },
+    {
+      "question": "What does CSS stand for?",
+      "options": ["Cascading Style Sheets", "Creative Style Systems", "Computer Style Sheets", "Colorful Style Sheets"],
+      "correct": 0
+    },
+    {
+      "question": "How do you select an element with id 'header' in CSS?",
+      "options": ["#header", ".header", "header", "*header"],
+      "correct": 0
+    },
+    {
+      "question": "What is the default value of the position property in CSS?",
+      "options": ["relative", "absolute", "fixed", "static"],
+      "correct": 3
+    },
+    {
+      "question": "Which CSS property controls the text size?",
+      "options": ["font-size", "text-size", "font-style", "text-style"],
+      "correct": 0
+    }
+  ],
+  "javascript": [
+    {
+      "question": "What is the correct syntax for referring to an external script called 'script.js'?",
+      "options": ["<script src='script.js'>", "<script href='script.js'>", "<script name='script.js'>", "<script link='script.js'>"],
+      "correct": 0
+    },
+    {
+      "question": "Which symbol is used for comments in JavaScript?",
+      "options": ["//", "#", "/*", "<!--"],
+      "correct": 0
+    },
+    {
+      "question": "What is the output of the following code: console.log(typeof 'Hello');?",
+      "options": ["string", "undefined", "object", "number"],
+      "correct": 0
+    },
+    {
+      "question": "Which method is used to convert a JSON string into a JavaScript object?",
+      "options": ["JSON.parse()", "JSON.stringify()", "JSON.object()", "JSON.convert()"],
+      "correct": 0
+    },
+    {
+      "question": "Which event occurs when the user clicks on an HTML element?",
+      "options": ["onclick", "onchange", "onmouseover", "onfocus"],
+      "correct": 0
+    }
+  ],
+  "sql": [
+    {
+      "question": "What does SQL stand for?",
+      "options": ["Structured Query Language", "Structured Question Language", "Schematic Query Language", "Simple Query Language"],
+      "correct": 0
+    },
+    {
+      "question": "Which SQL statement is used to extract data from a database?",
+      "options": ["GET", "SELECT", "EXTRACT", "SHOW"],
+      "correct": 1
+    },
+    {
+      "question": "What keyword is used to prevent duplicate records in SQL?",
+      "options": ["UNIQUE", "DISTINCT", "PRIMARY", "DIFFERENT"],
+      "correct": 1
+    },
+    {
+      "question": "Which of the following SQL commands is used to update a record?",
+      "options": ["MODIFY", "SET", "UPDATE", "CHANGE"],
+      "correct": 2
+    },
+    {
+      "question": "What is the default sorting order of the ORDER BY clause in SQL?",
+      "options": ["ASC", "DESC", "NONE", "SORT"],
+      "correct": 0
+    }
+  ],
+  "csharp": [
+    {
+      "question": "What is the correct file extension for a C# file?",
+      "options": [".csharp", ".cs", ".c#", ".c"],
+      "correct": 1
+    },
+    {
+      "question": "Which of the following is a valid way to declare a variable in C#?",
+      "options": ["int x = 10;", "int: x = 10;", "int x := 10;", "variable x = 10;"],
+      "correct": 0
+    },
+    {
+      "question": "What keyword is used to create a class in C#?",
+      "options": ["class", "Class", "define", "object"],
+      "correct": 0
+    },
+    {
+      "question": "Which of the following is used to handle exceptions in C#?",
+      "options": ["try-catch", "handle-exception", "catch-try", "try-exception"],
+      "correct": 0
+    },
+    {
+      "question": "What is the output of Console.WriteLine(5 + 3 * 2); in C#?",
+      "options": ["16", "11", "13", "10"],
+      "correct": 1
+    }
+  ]
+}

@@ -1,64 +1,78 @@
-let currentQuestionIndex = 0;
-let currentCategory = 'html'; // Can be changed to other categories like css, javascript, etc.
-let questions = [];
+let currentCategory = 'html'; // Default category
 
-// Fetch questions from the server
-fetch('/questions')
-    .then(response => response.json())
-    .then(data => {
-        questions = data[currentCategory];
-        loadQuestion();
-    });
-
-function loadQuestion() {
-    const questionElement = document.getElementById('question');
-    const optionLabels = [
-        document.getElementById('label1'),
-        document.getElementById('label2'),
-        document.getElementById('label3'),
-        document.getElementById('label4')
-    ];
-
-    const options = [
-        document.getElementById('option1'),
-        document.getElementById('option2'),
-        document.getElementById('option3'),
-        document.getElementById('option4')
-    ];
-
-    const question = questions[currentQuestionIndex];
-    questionElement.textContent = question.question;
-    optionLabels.forEach((label, index) => {
-        label.textContent = question.options[index];
-        options[index].checked = false; // Reset radio button selection
-    });
-
-   
-    // Clear any previous messages
-    document.getElementById('message').textContent = '';
+// Function to load questions for the selected category
+async function loadQuestions(category) {
+    try {
+        const response = await fetch(`/questions?category=${category}`);
+        if (!response.ok) throw new Error('Failed to load questions');
+        const questions = await response.json();
+        displayQuestions(questions);
+    } catch (error) {
+        console.error('Error:', error);
+    }
 }
 
-document.getElementById('quiz-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    const selectedOption = document.querySelector('input[name="option"]:checked');
+// Function to display questions with multiple-choice options
+function displayQuestions(questions) {
+    const quizContainer = document.getElementById('quiz-container');
+    quizContainer.innerHTML = ''; // Clear previous questions
 
-    if (!selectedOption) {
-        alert('Please select an answer');
-        return;
-    }
+    questions.forEach((question, index) => {
+        // Create question element
+        const questionElement = document.createElement('div');
+        questionElement.classList.add('question-block');
 
-    const userAnswer = parseInt(selectedOption.value);
-    const correctAnswer = questions[currentQuestionIndex].correct;
+        // Display question text
+        const questionText = document.createElement('p');
+        questionText.innerText = `${index + 1}. ${question.question}`;
+        questionElement.appendChild(questionText);
 
-    if (userAnswer === correctAnswer) {
-        document.getElementById('message').textContent = 'Correct! answer ';
-        currentQuestionIndex++;
-        if (currentQuestionIndex < questions.length) {
-            setTimeout(loadQuestion, 2000); // Delay loading next question
+        // Create radio buttons for each answer option
+        question.options.forEach((option, optionIndex) => {
+            const optionLabel = document.createElement('label');
+            const optionInput = document.createElement('input');
+
+            optionInput.type = 'radio';
+            optionInput.name = `question_${index}`;  // Ensures only one option can be selected per question
+            optionInput.value = optionIndex;  // Set option index to match it with the correct answer
+
+            optionLabel.appendChild(optionInput);
+            optionLabel.appendChild(document.createTextNode(option));
+
+            // Add the label with radio button to the question element
+            questionElement.appendChild(optionLabel);
+            questionElement.appendChild(document.createElement('br')); // Line break for better readability
+        });
+
+        quizContainer.appendChild(questionElement);
+    });
+
+    // Add a submit button to finalize answers
+    const submitButton = document.createElement('button');
+    submitButton.innerText = 'Submit Answers';
+    submitButton.addEventListener('click', checkAnswers);
+    quizContainer.appendChild(submitButton);
+}
+
+// Function to check if the selected answers are correct
+function checkAnswers() {
+    const questionBlocks = document.querySelectorAll('.question-block');
+    questionBlocks.forEach((block, index) => {
+        const selectedOption = block.querySelector(`input[name="question_${index}"]:checked`);
+        if (selectedOption) {
+            console.log(`Question ${index + 1}: Selected Option: ${selectedOption.value}`);
+            // You can compare `selectedOption.value` with the correct answer index from the JSON here
         } else {
-            document.getElementById('message').textContent = 'Quiz completed!';
+            console.log(`Question ${index + 1}: No option selected`);
         }
-    } else {
-        document.getElementById('message').textContent = 'Incorrect, try again!';
-    }
-});
+    });
+}
+
+// Event handler for category selection
+function selectCategory(category) {
+    currentCategory = category;
+    loadQuestions(currentCategory);
+}
+
+// Load default category on page load
+loadQuestions(currentCategory);
