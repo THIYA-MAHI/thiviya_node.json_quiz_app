@@ -1,0 +1,46 @@
+{
+    "html": [
+      {
+        "question": "What does HTML stand for?",
+        "options": ["Hyper Text Markup Language", "Hyperlinks and Text Markup Language", "Home Tool Markup Language", "None of the above"],
+        "correct": 0
+      },
+      {
+        "question": "Which HTML element is used to define the title of a document?",
+        "options": ["<meta>", "<title>", "<header>", "<link>"],
+        "correct": 1
+      },
+      {
+        "question": "What is the correct HTML element for inserting a line break?",
+        "options": ["<break>", "<br>", "<lb>", "<hr>"],
+        "correct": 1
+      },
+      {
+        "question": "Which HTML tag is used to create an unordered list?",
+        "options": ["<ul>", "<ol>", "<li>", "<list>"],
+        "correct": 0
+      },
+      {
+        "question": "Which attribute is used to provide a unique identifier for an HTML element?",
+        "options": ["class", "id", "type", "name"],
+        "correct": 1
+      },
+      {
+        "question": "What does the <a> tag in HTML represent?",
+        "options": ["An image", "A hyperlink", "A paragraph", "A header"],
+        "correct": 1
+      },
+      {
+        "question": "Which HTML element is used to define an image?",
+        "options": ["<img>", "<image>", "<pic>", "<src>"],
+        "correct": 0
+      }
+    ],
+    "css": [
+      {
+        "question": "Which CSS property is used to change the text color?",
+        "options": ["color", "font-color", "text-color", "background-color"],
+        "correct": 0
+      }
+    ]
+  }
