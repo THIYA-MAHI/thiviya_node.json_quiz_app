@@ -1,14 +1,30 @@
+/* General body styling */
 body {
-  display: flex;
   font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
+/* Flexbox container for sidebar and main content */
+.container {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: nowrap;
+}
+
+/* Sidebar styling */
 .sidebar {
   width: 200px;
   background-color: #f4f4f4;
   padding: 15px;
+  transition: all 0.3s ease;
 }
 
+/* Sidebar list */
 .sidebar ul {
   list-style-type: none;
   padding: 0;
@@ -24,7 +40,153 @@ body {
   background-color: #ddd;
 }
 
+/* Main content area */
 .main-content {
   flex-grow: 1;
   padding: 20px;
+}
+
+/* Responsive Quiz App Styling */
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 20px 0;
+  color: #333;
+}
+
+#quiz-container {
+  width: 60%;
+  margin-left: 20%;
+  position: fixed;
+  top: 30px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.question-block {
+  margin-bottom: 20px;
+}
+
+button {
+  display: block;
+  width: 50%;
+  padding: 7px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+  margin-left: 25%;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Loading message styling */
+p {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Responsive Styles */
+
+/* For smaller devices like smartphones */
+@media only screen and (max-width: 600px) {
+  /* Sidebar */
+  .sidebar {
+    width: 100%;
+    position: relative;
+    padding: 10px;
+    background-color: #f9f9f9;
+  }
+
+  .sidebar ul li {
+    text-align: center;
+  }
+
+  /* Main content and quiz container */
+  .main-content {
+    padding: 10px;
+  }
+
+  #quiz-container {
+    width: 100%;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 8px;
+  }
+}
+
+/* For tablets and medium devices */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .sidebar {
+    width: 150px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  #quiz-container {
+    width: 85%;
+    padding: 18px;
+  }
+
+  button {
+    font-size: 1.1rem;
+    padding: 9px;
+  }
+}
+
+/* For large screens (desktops, laptops) */
+@media only screen and (min-width: 768px) {
+  .container {
+    display: flex;
+  }
+
+  .sidebar {
+    width: 200px;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  #quiz-container {
+    width: 60%;
+    padding: 25px;
+  }
+
+  button {
+    font-size: 1.3rem;
+    padding: 12px;
+  }
+}
+
+/* For extra-large screens */
+@media only screen and (min-width: 1024px) {
+  #quiz-container {
+    width: 50%;
+  }
 }

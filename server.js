@@ -3,7 +3,7 @@ const fs = require('fs').promises;
 const url = require('url');
 
 // Use environment port provided by Heroku or default to 3000
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 2000;
 
 // Function to serve static files using async/await
 const serveStaticFile = async (res, filePath, contentType) => {
